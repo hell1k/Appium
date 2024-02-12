@@ -34,7 +34,7 @@ public class AppiumAndroidTest {
         capabilities.setCapability("appium:deviceName", "emulator-5554");
 //        capabilities.setCapability("appium:deviceName", "49e9905f");
         capabilities.setCapability("platformName", "Android");
-//        capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/yapmap.apk");
+        capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/yapmap.apk");
         driver = new AndroidDriver(new URL("http://172.17.0.2:4723"), capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -49,24 +49,22 @@ public class AppiumAndroidTest {
 //        UiAutomator2Options options = new UiAutomator2Options()
 //                .setUdid("123456")
 //                .setApp("/home/myapp.apk");
-        driver.lockDevice();
-//        if (driver.isDeviceLocked()){
-//            driver.unlockDevice();
-//        }
-//        try {
-//            waitElement(activityWelcomeBtn);
-//            getScreenshot();
-//            getElement(activityWelcomeBtn).click();
-//        } catch (Exception ignored) {
-//        }
-//        waitElement(signInBtn);
-//        getScreenshot();
-//        getElement(signInBtn).click();
-//        getElement(emailEditText).sendKeys("qeqeqeq");
-//        getScreenshot();
 //        driver.lockDevice();
-
-
+        if (driver.isDeviceLocked()){
+            driver.unlockDevice();
+        }
+        try {
+            waitElement(activityWelcomeBtn);
+            getScreenshot();
+            getElement(activityWelcomeBtn).click();
+        } catch (Exception ignored) {
+        }
+        waitElement(signInBtn);
+        getScreenshot();
+        getElement(signInBtn).click();
+        getElement(emailEditText).sendKeys("qeqeqeq");
+        getScreenshot();
+        driver.lockDevice();
     }
 
     public WebElement getElement(By locator) {
