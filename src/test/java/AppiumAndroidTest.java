@@ -50,21 +50,22 @@ public class AppiumAndroidTest {
 //                .setUdid("123456")
 //                .setApp("/home/myapp.apk");
 //        driver.lockDevice();
-        if (driver.isDeviceLocked()){
-            driver.unlockDevice();
-        }
-        try {
-            waitElement(activityWelcomeBtn);
-            getScreenshot();
-            getElement(activityWelcomeBtn).click();
-        } catch (Exception ignored) {
-        }
-        waitElement(signInBtn);
-        getScreenshot();
-        getElement(signInBtn).click();
-        getElement(emailEditText).sendKeys("qeqeqeq");
+//        if (driver.isDeviceLocked()){
+//            driver.unlockDevice();
+//        }
+//        try {
+//            waitElement(activityWelcomeBtn);
+//            getScreenshot();
+//            getElement(activityWelcomeBtn).click();
+//        } catch (Exception ignored) {
+//        }
+//        waitElement(signInBtn);
+//        getScreenshot();
+//        getElement(signInBtn).click();
+//        getElement(emailEditText).sendKeys("qeqeqeq");
         getScreenshot();
         driver.lockDevice();
+        getScreenshot();
     }
 
     public WebElement getElement(By locator) {
