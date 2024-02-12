@@ -34,7 +34,7 @@ public class AppiumAndroidTest {
         capabilities.setCapability("appium:deviceName", "emulator-5554");
 //        capabilities.setCapability("appium:deviceName", "49e9905f");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("appium:app", "/home/yapmap.apk");
+//        capabilities.setCapability("appium:app", "/home/yapmap.apk");
         driver = new AndroidDriver(new URL("http://172.17.0.2:4723"), capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
